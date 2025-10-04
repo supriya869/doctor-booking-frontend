@@ -1,0 +1,67 @@
+.appointment-list-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.appointment-list-container h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.appointment-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.appointment-list-container th, 
+.appointment-list-container td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointment-list-container th {
+  background-color: #6c63ff;
+  color: #fff;
+  font-weight: 500;
+}
+
+.appointment-list-container tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+
+.appointment-list-container td {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .appointment-list-container table, 
+  .appointment-list-container th, 
+  .appointment-list-container td {
+    font-size: 14px;
+  }
+}
+.cancel-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cancel-btn:hover {
+  background-color: darkred;
+}
+

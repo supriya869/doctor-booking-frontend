@@ -1,0 +1,58 @@
+.doctor-list-container {
+  margin: 20px 0;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-list-container h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.doctor-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.doctor-list-container th,
+.doctor-list-container td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.doctor-list-container th {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.doctor-list-container tr:hover {
+  background-color: #f9f9f9;
+}
+
+.doctor-list-container td {
+  font-size: 14px;
+  color: #444;
+}
+
+.doctor-list-container button {
+  padding: 6px 12px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+.doctor-list-container button:hover {
+  background-color: #0056b3;
+}

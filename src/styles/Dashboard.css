@@ -1,0 +1,127 @@
+/* Full page background */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f4f7fa; /* Soft light gray background */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Card wrapper for content */
+.dashboard-card {
+  background: #ffffff; /* Pure white card */
+  border-radius: 15px;
+  padding: 30px 40px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Welcome message */
+.dashboard-card h2 {
+  font-size: 28px;
+  color: #2c3e50; /* Dark gray-blue for text */
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Form styling */
+.dashboard-card form {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-card form input,
+.dashboard-card form select,
+.dashboard-card form button {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #d1dbe6; /* Soft border */
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card form input:focus,
+.dashboard-card form select:focus {
+  border-color: #3498db; /* Professional blue on focus */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.dashboard-card form button {
+  background: #3498db; /* Professional blue */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.dashboard-card form button:hover {
+  background: #2980b9; /* Darker blue on hover */
+}
+
+/* Table styling */
+.dashboard-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboard-card th, 
+.dashboard-card td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.dashboard-card th {
+  background-color: #3498db; /* Professional header */
+  color: #fff;
+  font-weight: 500;
+}
+
+.dashboard-card tr:nth-child(even) {
+  background-color: #f9fafc; /* Soft alternating rows */
+}
+
+.dashboard-card tr:hover {
+  background-color: #e8f0fb; /* Light blue hover */
+  transition: 0.3s;
+}
+
+.dashboard-card td {
+  color: #2c3e50; /* Text color for table cells */
+  border-bottom: 1px solid #e1e6ec;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-card form input,
+  .dashboard-card form select,
+  .dashboard-card form button {
+    width: 100%;
+  }
+
+  .dashboard-card table, 
+  .dashboard-card th, 
+  .dashboard-card td {
+    font-size: 14px;
+  }
+}
