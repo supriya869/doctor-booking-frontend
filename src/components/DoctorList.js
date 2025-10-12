@@ -5,10 +5,17 @@ import "../styles/DoctorList.css";
 export default function DoctorList() {
   const [doctors, setDoctors] = useState([]);
 
+
+
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("http://localhost:8035/api/doctors");
+        const response = await axios.get(`${API_BASE_URL}/api/doctors`);
+        console.log("Fetching doctors from:", `${API_BASE_URL}/api/doctors`);
+
         setDoctors(response.data);
         console.log("Fetched doctors:", response.data);
       } catch (error) {

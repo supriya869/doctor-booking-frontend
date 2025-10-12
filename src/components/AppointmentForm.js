@@ -7,10 +7,15 @@ export default function AppointmentForm({ user, refreshAppointments }) {
   const [selectedDoctor, setSelectedDoctor] = useState("");
   const [selectedDisease, setSelectedDisease] = useState("");
 
+
+
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const res = await axios.get("http://localhost:8035/api/doctors");
+        const res = await axios.get(`${API_BASE_URL}/api/doctors`);
         setDoctors(res.data);
       } catch (err) {
         console.error("Error fetching doctors:", err);
@@ -22,7 +27,7 @@ const [availableSlots, setAvailableSlots] = useState([]);
 
 useEffect(() => {
   if (selectedDoctor) {
-    axios.get(`http://localhost:8035/api/doctors/${selectedDoctor}/available-slots`)
+    axios.get(`${API_BASE_URL}/${selectedDoctor}/available-slots`)
       .then(res => setAvailableSlots(res.data))
       .catch(err => console.error(err));
   }
@@ -48,18 +53,17 @@ useEffect(() => {
 
   try {
     // Call the backend API that checks if the slot is already booked
-    const checkRes = await axios.post("http://localhost:8035/api/appointments/check-slot", {
-      doctorId: selectedDoctor,
-      dateTime: dateTime
-    });
-
+  const checkRes = await axios.post(`${API_BASE_URL}/api/appointments/check-slot`, {
+  doctorId: selectedDoctor,
+  dateTime: dateTime
+});
     if (checkRes.data.status === "Already booked") {
       alert("This time slot is already booked. Please choose another slot.");
       return; // Stop further booking
     }
 
     // If slot is available, book the appointment
-    await axios.post("http://localhost:8035/api/appointments", {
+    await axios.post(`${API_BASE_URL}/api/appointments`, {
       user,
       dateTime,
       doctorId: selectedDoctor,

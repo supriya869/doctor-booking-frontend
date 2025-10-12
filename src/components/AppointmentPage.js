@@ -11,13 +11,18 @@ const AppointmentPage = () => {
     try {
       const loggedInEmail = localStorage.getItem("email"); // get logged-in email
 
+
+
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+   console.log("API Base URL:", process.env.REACT_APP_API_BASE_URL);
+
       let response;
       if (loggedInEmail) {
         // Fetch appointments for logged-in user
-        response = await axios.get(`http://localhost:8035/api/appointments/user/${loggedInEmail}`);
+        response = await axios.get(`${API_BASE_URL}/api/appointments/user/${loggedInEmail}`);
       } else {
         // Fetch all appointments if no user email found
-        response = await axios.get("http://localhost:8035/api/appointments");
+        response = await axios.get(`${API_BASE_URL}/api/appointments`);
       }
 
       setAppointments(response.data);

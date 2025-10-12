@@ -5,13 +5,17 @@ import '../styles/AppointmentList.css';
 export default function AppointmentList({ appointments: initialAppointments, fetchAppointments }) {
   const [appointments, setAppointments] = useState(initialAppointments);
 
+
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     setAppointments(initialAppointments); // update state if prop changes
   }, [initialAppointments]);
 
   const cancelAppointment = async (email, dateTime, id) => {
     try {
-      await axios.post("http://localhost:8035/api/appointments/cancel", {
+      await axios.post(`${API_BASE_URL}/api/appointments/cancel`, {
         email,
         dateTime
       });
